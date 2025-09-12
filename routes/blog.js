@@ -56,14 +56,11 @@ router.post("/:id/like", async (req, res) => {
     const blog = await Blog.findById(blogId);
     if (!blog) return res.status(404).send("Blog not found");
 
-    // Check if user already liked
     const alreadyLiked = blog.likes?.includes(userId);
 
     if (alreadyLiked) {
-      // Unlike → remove user from likes array
       blog.likes.pull(userId);
     } else {
-      // Like → add user to likes array
       blog.likes.push(userId);
     }
 

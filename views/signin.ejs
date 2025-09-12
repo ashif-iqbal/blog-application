@@ -12,33 +12,53 @@
   <body>
     <%- include("./partials/nav.ejs") %>
 
-    <div class="container">
-      <form action="/signin" method="POST">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="password"
-          />
-        </div>
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="form-container">
+        <form action="/signin" method="POST" class="mb-4">
+          <h3 class="text-center mb-3">Sign In</h3>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      <a href="/auth/google">
-        <button>Login with Google</button>
-      </a>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Sign In</button>
+        </form>
+
+        <div class="text-center">
+          <p class="text-muted mb-2">or</p>
+          <a
+            href="/auth/google"
+            class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2"
+          >
+            <img
+              src="https://developers.google.com/identity/images/g-logo.png"
+              alt="Google Logo"
+              width="20"
+              height="20"
+            />
+            Continue with Google
+          </a>
+        </div>
+      </div>
     </div>
 
     <%- include("./partials/script.ejs") %>

@@ -6,24 +6,130 @@
   integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
   crossorigin="anonymous"
 />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+
 <style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f5f9ff, #ffffff);
+    color: #333;
+  }
+
   .personalGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
   }
-  .fixed-card {
-    height: 300px;
-    max-width: 18rem;
+
+  .card {
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+    border: 1px solid rgba(13, 110, 253, 0.08);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+  .card-title {
+    color: #0d6efd;
+    font-weight: 600;
   }
   .card-text {
-    max-height: 27px;
+    max-height: 50px;
     overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 123, 255, 0.1);
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  .form-container h3 {
+    color: #0d6efd;
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #0d6efd, #2563eb);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+  }
+
+  .btn-outline-danger {
+    border-radius: 12px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.3);
+  }
+
+  .navbar-dark .nav-link:hover {
+    color: #0d6efd !important;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #f1f3f5;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .comment-box {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .display-content {
     display: block !important;
-  }
-  .hide-item {
-    display: none;
   }
 </style>

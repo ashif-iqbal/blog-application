@@ -2,6 +2,8 @@ const { Router } = require("express");
 const User = require("../models/user.js");
 const router = Router();
 const Blog = require("../models/blog.js");
+const Comment = require("../models/comment.js");
+const { validateToken } = require("../services/authentication.js");
 router.get("/", async (req, res) => {
   const allBlogs = await Blog.find({});
   return res.render("home", {
@@ -39,5 +41,24 @@ router.post("/signin", async (req, res) => {
 router.get("/logout", (req, res) => {
   return res.clearCookie("token").redirect("/");
 });
+router.get("/dashboard", async (req, res) => {
+  const blogs = await Blog.find({ createdBy: req.user._id });
+  let count = 0;
+  let commentsCount = 0;
+  let commentMap = new Map();
+  for (const blog of blogs) {
+    count += blog.likes.length;
 
+    const comments = await Comment.find({ blogId: blog._id });
+    commentMap.set(blog, comments.length);
+    commentsCount += comments.length;
+  }
+  return res.render("dashboard", {
+    user: req.user,
+    blogs,
+    count,
+    commentsCount,
+    commentMap,
+  });
+});
 module.exports = router;

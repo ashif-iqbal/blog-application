@@ -3,7 +3,6 @@ const User = require("../models/user.js");
 const router = Router();
 const { createTokenForUser } = require("../services/authentication.js");
 
-// Step 1: Redirect user to Google's consent screen
 router.get("/", (req, res) => {
   const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
   const options = {
@@ -21,11 +20,9 @@ router.get("/", (req, res) => {
   res.redirect(`${rootUrl}?${qs.toString()}`);
 });
 
-// Step 2: Google redirects back with a code
 router.get("/callback", async (req, res) => {
   const code = req.query.code;
 
-  // Exchange code for tokens
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -40,28 +37,24 @@ router.get("/callback", async (req, res) => {
 
   const { access_token } = await tokenRes.json();
 
-  // Use access token to get user info
   const userRes = await fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
     headers: { Authorization: `Bearer ${access_token}` },
   });
   const googleUser = await userRes.json();
 
-  // Find or create local user
   let user = await User.findOne({ email: googleUser.email });
   if (!user) {
     user = await User.create({
       fullName: googleUser.name,
       email: googleUser.email,
-      password: "google-oauth", // dummy, since they login via Google
+      password: "google-oauth",
     });
   }
 
-  // Issue your existing JWT for session
   const token = createTokenForUser(user);
 
-  // Store JWT in cookie
   res.cookie("token", token, { httpOnly: true });
-  res.redirect("/"); // redirect wherever you want
+  res.redirect("/");
 });
 
 module.exports = router;

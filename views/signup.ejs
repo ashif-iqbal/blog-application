@@ -13,40 +13,60 @@
     <%- include("./partials/nav.ejs") %>
 
     <div class="container">
-      <form action="/signup" method="POST">
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label"
-            >Full Name</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="fullName"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            name="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            name="password"
-          />
-        </div>
+      <div class="form-container">
+        <form action="/signup" method="POST">
+          <h3 class="text-center mb-3">Sign Up</h3>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="fullName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="password"
+            />
+          </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+        <div class="text-center">
+          <p class="text-muted mb-2">or</p>
+          <a
+            href="/auth/google"
+            class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2"
+          >
+            <img
+              src="https://developers.google.com/identity/images/g-logo.png"
+              alt="Google Logo"
+              width="20"
+              height="20"
+            />
+            Continue with Google
+          </a>
+        </div>
+      </div>
     </div>
 
     <%- include("./partials/script.ejs") %>

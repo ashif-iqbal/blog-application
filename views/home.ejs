@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <%- include("./partials/head.ejs") %>
-    <title>HomePage</title>
+    <title>Blogify</title>
   </head>
   <body>
     <%- include("./partials/nav.ejs") %>
 
     <div class="container personalGrid mt-3">
       <% blogs.forEach(blog => { %>
-      <div class="card fixed-card" style="width: 18rem">
+      <div class="card">
         <img src="<%= blog.coverImageUrl %>" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title"><%= blog.title %></h5>
