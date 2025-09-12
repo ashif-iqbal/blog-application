@@ -17,6 +17,12 @@ const blogSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "users",
     },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "users",
+      },
+    ],
   },
   { timestamps: true }
 );
