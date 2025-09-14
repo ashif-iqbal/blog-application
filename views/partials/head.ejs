@@ -20,10 +20,15 @@
 
   .personalGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+    justify-content: start;
     gap: 1.5rem;
   }
-
+  @media (min-width: 1200px) {
+    .personalGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
   .card {
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);

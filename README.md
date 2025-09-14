@@ -42,15 +42,14 @@ A full-stack **blog application** built with **Node.js, Express, MongoDB Atlas, 
 ## 📂 Project Structure
 
 The project follows a **clean MVC architecture**:
-blogify/
-│
+blog-application/
 ├── models/ # Mongoose schemas
 ├── routes/ # Express routes
 ├── views/ # EJS templates (HTML, CSS, JS)
-├── public/ # Static assets
-├── screenshots/ # screenshots for preview
+├── public/ # Static assets (CSS, JS, images)
+├── screenshots/ # Screenshots for preview
 ├── app.js # Main server file
-└── package.json
+└── package.json # Project dependencies and scripts
 
 ## 🗄️ Database Schema
 
@@ -162,24 +161,24 @@ Visit: http://localhost:8000
 
 ☁️ Deployment (on Render)
 
-Push your project to GitHub.
+1. Push your project to GitHub.
 
-Go to Render
-, create a new Web Service.
+2. Go to Render
+   , create a new Web Service.
 
-Connect your repo.
+3. Connect your repo.
 
-Set the Build Command:
+4. Set the Build Command:
 
 npm install
 
-Set the Start Command:
+5. Set the Start Command:
 
 npm start
 
-Add environment variables in the Render Dashboard (same as .env).
+6. Add environment variables in the Render Dashboard (same as .env).
 
-Deploy 🎉
+7. Deploy 🎉
 
 Live Demo: https://blogify-7epz.onrender.com/
 
@@ -187,21 +186,21 @@ Live Demo: https://blogify-7epz.onrender.com/
 
 Contributions, issues, and feature requests are welcome!
 
-Fork the project.
+1. Fork the project.
 
-Create your feature branch:
+2. Create your feature branch:
 
 git checkout -b feature/YourFeature
 
-Commit your changes:
+3. Commit your changes:
 
 git commit -m "Add some feature"
 
-Push to the branch:
+4. Push to the branch:
 
 git push origin feature/YourFeature
 
-Open a Pull Request.
+5. Open a Pull Request.
 
 📸 Preview
 
@@ -214,10 +213,10 @@ Here are some screenshots of Blogify in action:
 
 🏆 About This Project
 
-Built from scratch with no boilerplates.
+1. Built from scratch with no boilerplates.
 
-Frontend is plain HTML, CSS, JS (rendered via EJS).
+2. Frontend is plain HTML, CSS, JS (rendered via EJS).
 
-The codebase is clean, modular, and beginner-friendly.
+3. The codebase is clean, modular, and beginner-friendly.
 
-Developed for NSCC SRM Recruitment to showcase full-stack development skills.
+4. Developed for NSCC SRM Recruitment to showcase full-stack development skills.
