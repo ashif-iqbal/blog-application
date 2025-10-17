@@ -1,6 +1,6 @@
 # 📖 Blogify
 
-Developed for **NSCC SRM Recruitment** to showcase **full-stack development skills**.
+Developed for **Alexa Developers SRM Recruitment** to showcase **full-stack development skills**.
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -219,4 +219,4 @@ Here are some screenshots of Blogify in action:
 
 3. The codebase is clean, modular, and beginner-friendly.
 
-4. Developed for NSCC SRM Recruitment to showcase full-stack development skills.
+4. Developed for Alexa Developers SRM Recruitment to showcase full-stack development skills.
